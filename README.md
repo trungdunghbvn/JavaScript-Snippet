@@ -6,10 +6,10 @@ Some of the JavaScript Snippets that are useful
 
 1. [All](#all)
 2. [AllEqual](#all-equal)
-3. [approximatelyEqual](#approximatelyEqual)
-4. [arrayToCSV](#arrayToCSV)
-5. [Lớp](#lớp)
-6. [SOLID](#solid)
+3. [ApproximatelyEqual](#approximatelyEqual)
+4. [ArrayToCSV](#arrayToCSV)
+5. [Attempt](#attempt)
+6. [Average](#average)
 7. [Testing](#testing)
 8. [Xử lí đồng thời](#xử-lí-đồng-thời)
 9. [Xử lí lỗi](#xử-lí-lỗi)
@@ -67,6 +67,39 @@ const arrayToCSV = (arr, delimiter = ',') =>
 
 arrayToCSV([['a', 'b'], ['c', 'd']]); // '"a","b"\n"c","d"'
 arrayToCSV([['a', 'b'], ['c', 'd']], ':'); // '"a":"b"\n"c":"d"'
+```
+
+**[⬆ về đầu trang](#mục-lục)**
+## **Attempt**
+
+### Thực thi một hàm, trả về kết quả hoặc error object đã bắt được.
+
+```javascript
+const attempt = (fn, ...args) => {
+  try {
+    return fn(...args);
+  } catch (e) {
+    return e instanceof Error ? e : new Error(e);
+  }
+};
+
+const elements = attempt(function(selector) {
+  return document.querySelectorAll(selector);
+}, '>_>');
+
+if (elements instanceof Error) elements = []; // elements = []
+```
+
+**[⬆ về đầu trang](#mục-lục)**
+## **Average**
+
+### Trả về giá trị trung bình của hai hay nhiều phân tử
+
+```javascript
+const average = (...nums) => nums.reduce((acc, val) => acc + val, 0) / nums.length;
+
+average(...[1, 2, 3]); // 2
+average(1, 2, 3); // 2
 ```
 
 **[⬆ về đầu trang](#mục-lục)**
