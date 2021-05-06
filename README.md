@@ -15,7 +15,7 @@ Some of the JavaScript Snippets that are useful
   11. [Viết chú thích](#viết-chú-thích)
   12. [Các ngôn ngữ khác](#các-ngôn-ngữ-khác)
 
-## **1. All**
+## **All**
 ### Kiểm tra các phần tử trong mảng có thỏa mãn điểu kiện đã cho không (fn). Khi không truyền tham số thứ 2, mặc định fn = true
 
 ```javascript
@@ -27,7 +27,7 @@ all([1, 2, 3]); // true
 ```
 **[⬆ về đầu trang](#all)**
 
-## **2. allEqual**
+## **All Equal**
 ### Kiểm tra các phần tử trong mảng có bằng nhau không
 
 ```javascript
