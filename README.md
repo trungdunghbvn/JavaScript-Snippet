@@ -7,7 +7,7 @@ Some of the JavaScript Snippets that are useful
 1. [All](#all)
 2. [AllEqual](#all-equal)
 3. [approximatelyEqual](#approximatelyEqual)
-4. [arrayToCSV](#array-to-csv)
+4. [arrayToCSV](#arrayToCSV)
 5. [Lớp](#lớp)
 6. [SOLID](#solid)
 7. [Testing](#testing)
