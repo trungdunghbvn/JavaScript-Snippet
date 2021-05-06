@@ -10,12 +10,12 @@ Some of the JavaScript Snippets that are useful
 4. [ArrayToCSV](#arrayToCSV)
 5. [Attempt](#attempt)
 6. [Average](#average)
-7. [Testing](#testing)
-8. [Xử lí đồng thời](#xử-lí-đồng-thời)
-9. [Xử lí lỗi](#xử-lí-lỗi)
-10. [Định dạng](#Định-dạng)
-11. [Viết chú thích](#viết-chú-thích)
-12. [Các ngôn ngữ khác](#các-ngôn-ngữ-khác)
+7. [AverageBy](#averageBy)
+8. [Bottom Visible](#bottom-visible)
+9. [Byte Size](#byte-size)
+10. [Capitalize](#capitalize)
+11. [Capitalize Every Word](#capitalize-every-word)
+12. [Cast Array](#cast-array)
 
 ## **All**
 
@@ -100,6 +100,78 @@ const average = (...nums) => nums.reduce((acc, val) => acc + val, 0) / nums.leng
 
 average(...[1, 2, 3]); // 2
 average(1, 2, 3); // 2
+```
+
+**[⬆ về đầu trang](#mục-lục)**
+## **AverageBy**
+
+### Trả về giá trị trung bình của một mảng.
+
+```javascript
+const averageBy = (arr, fn) =>
+  arr.map(typeof fn === 'function' ? fn : val => val[fn]).reduce((acc, val) => acc + val, 0) /
+  arr.length;
+
+averageBy([{ x: 1 }, { x: 2 }, { n: 3 }, { n: 4 }], item => item.x); // 2.5
+averageBy([{ x: 1 }, { x: 2 }, { n: 3 }, { n: 4 }], 'x'); // 2.5
+```
+
+**[⬆ về đầu trang](#mục-lục)**
+## **Bottom Visible**
+
+### Kiểm tra xem cuối trang có hiển thị hay không.
+
+```javascript
+const bottomVisible = () => document.documentElement.clientHeight + window.scrollY >=
+  (document.documentElement.scrollHeight || document.documentElement.clientHeight);
+
+bottomVisible(); // true
+```
+
+**[⬆ về đầu trang](#mục-lục)**
+## **Byte Size**
+
+### Trả về độ dài của một chuỗi được tính bằng byte.
+
+```javascript
+const byteSize = str => new Blob([str]).size;
+
+byteSize('😍'); // 4
+byteSize('Viblo May fest'); // 14
+```
+
+**[⬆ về đầu trang](#mục-lục)**
+## **Capitalize**
+
+### Viết hoa chữ cái đầu tiên của một chuỗi.
+
+```javascript
+const capitalize = ([first, ...rest]) => first.toUpperCase() + rest.join('');
+
+capitalize('vibloMayFest'); // 'VibloMayFest'
+```
+
+**[⬆ về đầu trang](#mục-lục)**
+## **Capitalize Every Word**
+
+### Viết hoa chữ cái đầu tiên của mỗi từ trong một chuỗi.
+
+```javascript
+const capitalizeEveryWord = str => str.replace(/\b[a-z]/g, char => char.toUpperCase());
+
+capitalizeEveryWord('viblo may Fest'); // 'Viblo May Fest'
+```
+
+**[⬆ về đầu trang](#mục-lục)**
+## **Cast Array**
+
+### Convert một giá trị không phải mảng thành mảng.
+
+```javascript
+const castArray = val => (Array.isArray(val) ? val : [val]);
+
+castArray('viblo'); // ['viblo']
+castArray([1]); // [1]
 ```
 
 **[⬆ về đầu trang](#mục-lục)**
