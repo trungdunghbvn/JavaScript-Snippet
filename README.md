@@ -25,7 +25,7 @@ all([4, 2, 3], x => x > 1); // true
 all([1, 2, 3], x => x > 1); // false
 all([1, 2, 3]); // true
 ```
-**[⬆ về đầu trang](#all)**
+**[⬆ về đầu trang](#mục-lục)**
 
 ## **All Equal**
 ### Kiểm tra các phần tử trong mảng có bằng nhau không
@@ -36,4 +36,4 @@ const allEqual = arr => arr.every(val => val === arr[0]);
 allEqual([1, 2, 3, 4, 5, 6]); // false
 allEqual([1, 1, 1, 1]); // true
 ```
-**[⬆ về đầu trang](#all-equal)**
+**[⬆ về đầu trang](#mục-lục)**
